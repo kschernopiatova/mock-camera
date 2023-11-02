@@ -1,12 +1,12 @@
-public class MockByteBuffer {
+public class ByteBuffer {
 
     private byte[] imgSource;
 
-    public MockByteBuffer(byte[] bytes) {
+    public ByteBuffer(byte[] bytes) {
         this.imgSource = bytes;
     }
 
-    public MockByteBuffer get(byte[] bytes) {
+    public ByteBuffer get(byte[] bytes) {
         System.arraycopy(imgSource, 0, bytes, 0, bytes.length);
         return this;
     }

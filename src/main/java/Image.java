@@ -2,16 +2,16 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-public class MockImage {
+public class Image {
 
     private final Plane[] planes;
 
-    public MockImage(byte[] bytes) {
+    public Image(byte[] bytes) {
         planes = new Plane[1];
-        planes[0] = new Plane(new MockByteBuffer(bytes));
+        planes[0] = new Plane(new ByteBuffer(bytes));
     }
 
-    public static MockImage getImage(String path) {
+    public static Image getImage(String path) {
         File file = new File(path);
         byte[] bytes;
         try {
@@ -19,7 +19,7 @@ public class MockImage {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return new MockImage(bytes);
+        return new Image(bytes);
     }
 
     public Plane[] getPlanes() {
@@ -28,13 +28,13 @@ public class MockImage {
 
     public static class Plane {
 
-        private final MockByteBuffer byteBuffer;
+        private final ByteBuffer byteBuffer;
 
-        public Plane(MockByteBuffer byteBuffer) {
+        public Plane(ByteBuffer byteBuffer) {
             this.byteBuffer = byteBuffer;
         }
 
-        public MockByteBuffer getBuffer() {
+        public ByteBuffer getBuffer() {
             return byteBuffer;
         }
     }
