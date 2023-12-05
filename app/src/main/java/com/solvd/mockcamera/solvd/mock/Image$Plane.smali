@@ -45,11 +45,11 @@
 
 
 # virtual methods
-.method public getBuffer()Lnet/sourceforge/mock/ByteBuffer;
+.method public getBuffer()Lcom/solvd/mock/ByteBuffer;
     .locals 1
 
     .line 165
-    iget-object v0, p0, Lnet/sourceforge/mock/Image$Plane;->byteBuffer:Lnet/sourceforge/mock/ByteBuffer;
+    iget-object v0, p0, Lcom/solvd/mock/Image$Plane;->byteBuffer:Lcom/solvd/mock/ByteBuffer;
 
     return-object v0
 .end method
